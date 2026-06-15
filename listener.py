@@ -23,7 +23,7 @@ else:
     model = None
 
 def main_loop():
-    print("Antimatter Listener Started. Waiting for prompts...")
+    print("Etherdesk Listener Started. Waiting for prompts...")
     # This loop monitors prompt.txt for new commands sent from the phone.
     
     while True:

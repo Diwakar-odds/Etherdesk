@@ -1,6 +1,6 @@
 <div align="center">
   
-# 🌌 Antimatter
+# 🌌 Etherdesk
 
 **Your Entire Computer, Right in Your Pocket.**
 
@@ -9,12 +9,12 @@
 [![Gemini API](https://img.shields.io/badge/Gemini_API-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)](https://ai.google.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-*Antimatter is a lightweight, IDE-agnostic "Pocket IDE" bridge application. Securely access your files, execute terminal commands, and command your AI agents—all from your mobile phone on your local Wi-Fi.*
+*Etherdesk is a lightweight, IDE-agnostic "Pocket IDE" bridge application. Securely access your files, execute terminal commands, and command your AI agents—all from your mobile phone on your local Wi-Fi.*
 
 ---
 
 <!-- Placeholder for a sleek UI screenshot: replace the img src with a real image when you upload to GitHub! -->
-<img src="https://via.placeholder.com/800x400/0f111a/4ade80?text=Insert+Antimatter+UI+Screenshot+Here" width="80%">
+<img src="https://via.placeholder.com/800x400/0f111a/4ade80?text=Insert+Etherdesk+UI+Screenshot+Here" width="80%">
 
 </div>
 
@@ -31,7 +31,7 @@
 
 ## 🏗️ How It Works (Architecture)
 
-Antimatter uses a decoupled architecture. The Web Server serves the UI and handles OS functions natively, while the Listener acts as the "Brain", piping messages to LLMs via an asynchronous text-file event bus (`prompt.txt` / `response.txt`).
+Etherdesk uses a decoupled architecture. The Web Server serves the UI and handles OS functions natively, while the Listener acts as the "Brain", piping messages to LLMs via an asynchronous text-file event bus (`prompt.txt` / `response.txt`).
 
 ```mermaid
 graph TD
@@ -54,8 +54,8 @@ graph TD
 Clone this repository and jump into the directory:
 
 ```bash
-git clone https://github.com/yourusername/antimatter.git
-cd antimatter
+git clone https://github.com/Diwakar-odds/Etherdesk.git
+cd Etherdesk
 ```
 
 Install the required Python modules:

@@ -8,7 +8,7 @@ from pydantic import BaseModel
 import socket
 import secrets
 
-app = FastAPI(title="Antimatter Server")
+app = FastAPI(title="Etherdesk Server")
 
 security = HTTPBasic()
 
@@ -27,7 +27,7 @@ def authenticate(credentials: HTTPBasicCredentials = Depends(security)):
         )
     return credentials.username
 
-# Get absolute path for the antimatter directory
+# Get absolute path for the Etherdesk directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 PROMPT_FILE = os.path.join(BASE_DIR, "prompt.txt")
@@ -63,7 +63,7 @@ async def read_root(user: str = Depends(authenticate)):
     if os.path.exists(index_path):
         with open(index_path, "r", encoding="utf-8") as f:
             return f.read()
-    return "Antimatter UI not found! Please ensure static/index.html exists."
+    return "Etherdesk UI not found! Please ensure static/index.html exists."
 
 @app.post("/api/chat/send")
 async def send_chat(msg: ChatMessage, user: str = Depends(authenticate)):
@@ -160,7 +160,7 @@ def get_local_ip():
 if __name__ == "__main__":
     ip = get_local_ip()
     print(f"====================================================")
-    print(f"[*] Antimatter Server is running!")
+    print(f"[*] Etherdesk Server is running!")
     print(f"[*] Open this URL in your phone's browser:")
     print(f"    http://{ip}:8080")
     print(f"====================================================")

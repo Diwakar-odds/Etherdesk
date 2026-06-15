@@ -57,7 +57,7 @@ async function sendMessage() {
     
     // Disable input while waiting
     document.getElementById('send-btn').style.opacity = '0.5';
-    promptInput.placeholder = "Waiting for Antigravity...";
+    promptInput.placeholder = "Waiting for AI...";
     promptInput.disabled = true;
 
     try {
@@ -97,7 +97,7 @@ function pollForResponse() {
 function resetInput() {
     waitingForResponse = false;
     document.getElementById('send-btn').style.opacity = '1';
-    promptInput.placeholder = "Message Antigravity...";
+    promptInput.placeholder = "Message AI assistant...";
     promptInput.disabled = false;
     promptInput.focus();
 }
