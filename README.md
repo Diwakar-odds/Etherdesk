@@ -20,6 +20,7 @@
 
 ## ✨ Features
 
+- 🎨 **Sleek, Modern UI** — A brand new dark-mode design with glassmorphism, responsive chat, and fluid micro-animations.
 - 📁 **Mobile File Explorer** — Browse your entire local file system from your couch.
 - 📝 **Remote Code Editor** — Open text/code files, apply blazing-fast edits via your phone keyboard, and save them directly to your PC.
 - 💻 **Live Terminal Integration** — Stream `stdout` and `stderr` live! Run `git status`, test scripts, or start servers natively.
@@ -66,10 +67,14 @@ pip install -r requirements.txt
 
 ### 2. Configuration & Credentials
 
-Before launching, tweak your settings to keep things secure!
+Before launching, tweak your settings to keep things secure! We use environment variables to keep your secrets safe.
 
-*   **Set Server Password:** Open `server.py` and modify `USERNAME` and `PASSWORD` (Lines 13-14).
-*   **Plug in your AI:** Open `listener.py` and insert your **Gemini API Key** in the `GEMINI_API_KEY` variable. *(Optional: Only needed if you want the interactive AI chat).*
+1.  **Create your config file:** Copy the `.env.example` file to `.env`:
+    ```bash
+    cp .env.example .env
+    ```
+2.  **Set Server Password:** Open the newly created `.env` file and modify the `USERNAME` and `PASSWORD` to secure your server.
+3.  **Plug in your AI:** In the same `.env` file, insert your **Gemini API Key** in the `GEMINI_API_KEY` variable. *(Optional: Only needed if you want the interactive AI chat).*
 
 ### 3. Ignition 💥
 

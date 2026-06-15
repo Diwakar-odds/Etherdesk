@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import uvicorn
 from fastapi import FastAPI, Request, Depends, HTTPException, status
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -12,9 +13,11 @@ app = FastAPI(title="Etherdesk Server")
 
 security = HTTPBasic()
 
-# default credentials (change password as needed)
-USERNAME = "admin"
-PASSWORD = "password"
+load_dotenv()
+
+# load credentials from environment variables, fallback to defaults if not set
+USERNAME = os.getenv("USERNAME", "babe")
+PASSWORD = os.getenv("PASSWORD", "Diwakar@25")
 
 def authenticate(credentials: HTTPBasicCredentials = Depends(security)):
     correct_username = secrets.compare_digest(credentials.username, USERNAME)

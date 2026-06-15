@@ -1,5 +1,6 @@
 import os
 import time
+from dotenv import load_dotenv
 
 # To use Gemini, you will need to install the SDK: `pip install google-generativeai`
 try:
@@ -11,12 +12,14 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROMPT_FILE = os.path.join(BASE_DIR, "prompt.txt")
 RESPONSE_FILE = os.path.join(BASE_DIR, "response.txt")
 
-# ==========================================
-# PASTE YOUR GEMINI API KEY HERE
-# ==========================================
-GEMINI_API_KEY = "YOUR_API_KEY_HERE"
+load_dotenv()
 
-if genai and GEMINI_API_KEY != "YOUR_API_KEY_HERE":
+# ==========================================
+# GEMINI API KEY is loaded from .env
+# ==========================================
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "YOUR_API_KEY_HERE")
+
+if genai and GEMINI_API_KEY and GEMINI_API_KEY != "YOUR_API_KEY_HERE":
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel('gemini-1.5-pro-latest') # or your preferred model
 else:

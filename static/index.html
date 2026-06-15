@@ -31,9 +31,12 @@
                 </div>
             </div>
             
-            <div class="chat-input-area">
-                <textarea id="prompt-input" placeholder="Message Antigravity..." rows="1"></textarea>
-                <button id="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            <div class="chat-input-wrapper">
+                <div class="chat-input-area">
+                    <textarea id="prompt-input" placeholder="Message Antigravity..." rows="1"></textarea>
+                    <button id="send-btn" onclick="sendMessage()"><i class="fa-solid fa-arrow-up"></i></button>
+                </div>
+                <div class="input-footer">Etherdesk can make mistakes. Consider verifying critical information.</div>
             </div>
         </section>
 
@@ -49,13 +52,12 @@
             </div>
         </section>
 
-        <!-- Terminal Tab -->
         <section id="terminal-tab" class="tab-content">
             <div id="terminal-output" class="terminal-output">Welcome to Etherdesk Terminal.</div>
-            <div class="chat-input-area" style="border-top: 1px solid var(--border-color); padding: 5px;">
-                <span style="color: #4ade80; padding-left: 10px; font-family: monospace;">$</span>
-                <input type="text" id="terminal-input" placeholder="Type command..." style="flex: 1; background: none; border: none; color: white; padding: 10px; outline: none; font-family: monospace; font-size: 1rem;">
-                <button id="term-send-btn" onclick="sendTerminalCommand()" style="background: none; border: none; color: var(--accent-color); cursor: pointer; padding: 10px;"><i class="fa-solid fa-arrow-right"></i></button>
+            <div class="terminal-input-area">
+                <span style="color: #4ade80; font-family: monospace;">$</span>
+                <input type="text" id="terminal-input" placeholder="Type command..." autocomplete="off">
+                <button id="term-send-btn" onclick="sendTerminalCommand()"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </section>
 
