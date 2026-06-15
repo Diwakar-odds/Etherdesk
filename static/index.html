@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Antimatter</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="topbar">
+        <div class="logo">
+            <i class="fa-solid fa-atom"></i> Antimatter
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('chat')"><i class="fa-solid fa-message"></i> Chat</button>
+            <button class="tab-btn" onclick="switchTab('files')"><i class="fa-solid fa-folder"></i> Files</button>
+            <button class="tab-btn" onclick="switchTab('terminal')"><i class="fa-solid fa-terminal"></i> Terminal</button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+        
+        <!-- Chat Tab -->
+        <section id="chat-tab" class="tab-content active">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message system">
+                    <div class="msg-content">Welcome to Antimatter! Antigravity is connected and waiting for your commands.</div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <textarea id="prompt-input" placeholder="Message Antigravity..." rows="1"></textarea>
+                <button id="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </section>
+
+        <!-- Files Tab -->
+        <section id="files-tab" class="tab-content">
+            <div class="file-header">
+                <button onclick="goUp()" class="icon-btn"><i class="fa-solid fa-arrow-up"></i></button>
+                <div id="current-path" class="path-display">f:/bn</div>
+                <button onclick="refreshFiles()" class="icon-btn"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <div id="file-list" class="file-list">
+                <!-- File items injected here -->
+            </div>
+        </section>
+
+        <!-- Terminal Tab -->
+        <section id="terminal-tab" class="tab-content">
+            <div id="terminal-output" class="terminal-output">Welcome to Antimatter Terminal.</div>
+            <div class="chat-input-area" style="border-top: 1px solid var(--border-color); padding: 5px;">
+                <span style="color: #4ade80; padding-left: 10px; font-family: monospace;">$</span>
+                <input type="text" id="terminal-input" placeholder="Type command..." style="flex: 1; background: none; border: none; color: white; padding: 10px; outline: none; font-family: monospace; font-size: 1rem;">
+                <button id="term-send-btn" onclick="sendTerminalCommand()" style="background: none; border: none; color: var(--accent-color); cursor: pointer; padding: 10px;"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Editor Modal -->
+        <div id="editor-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="editor-filename">filename.txt</span>
+                    <div>
+                        <button class="save-btn" onclick="saveFile()" style="background: none; border: none; color: #4ade80; cursor: pointer; font-size: 1.2rem; margin-right: 15px;"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="close-btn" onclick="closeEditor()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <textarea id="editor-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
